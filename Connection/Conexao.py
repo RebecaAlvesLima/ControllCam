@@ -11,6 +11,14 @@ if con.is_connected():
     print("conectado ao banco de dados ", linha)
 
 if con.is_connected():
+    query = '''SELECT * FROM Placa'''
+    cursor = con.cursor()
+    cursor.execute(query)
+    result = cursor.fetchall()
+
+    for row in result: 
+        print(row)
+
     cursor.close()
     con.close()
     print("conexão com mysql encerrada")
